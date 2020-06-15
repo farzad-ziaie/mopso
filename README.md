@@ -25,12 +25,23 @@ class cost:
         z3 = np.sum(x ** 6)
         return np.array([z1, z2, z3])
 
-mo = mopso(cost__ = cost(), debug=True)
+mo = mopso(cost__ = cost())
 mo.fit(maxiter=2)
 ```
 
-
-
+the outputs: 
+call the mo.repo to see the best positions, it's a list of best particles
+each of the elements in the mo.repo is a dictionary.
+```python
+mo.repo[0] = {'position': random_pos[i],
+  'velocity': np.zeros(self.weight_size),
+  'cost': [],
+  'best_position': [],
+  'best_cost': [],
+  'isdominated': [],
+  'gridindex': [],
+  'gridsubindex': []}
+```
 
 
 
